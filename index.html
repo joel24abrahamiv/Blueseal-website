@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,20 +24,50 @@ color:white;
 overflow-x:hidden;
 }
 
-/* BACKGROUND SEAL */
+/* blurred seal background */
 
 .bgseal{
 position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:900px;
-opacity:0.05;
-filter:blur(30px);
+font-size:1000px;
+opacity:0.04;
+filter:blur(40px);
 z-index:-1;
 }
 
-/* NAVBAR */
+/* animated waves */
+
+.wave{
+position:fixed;
+bottom:0;
+left:0;
+width:200%;
+height:200px;
+background:rgba(255,255,255,0.05);
+border-radius:45%;
+animation:wave 15s linear infinite;
+}
+
+.wave:nth-child(2){
+bottom:30px;
+opacity:.4;
+animation-duration:20s;
+}
+
+.wave:nth-child(3){
+bottom:60px;
+opacity:.2;
+animation-duration:25s;
+}
+
+@keyframes wave{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
+}
+
+/* navbar */
 
 nav{
 display:flex;
@@ -48,16 +77,16 @@ padding:25px 70px;
 }
 
 .logo{
-font-size:26px;
+font-size:28px;
 font-weight:700;
 color:#60a5fa;
 }
 
-.navbuttons button{
+.buttons button{
 margin-left:12px;
 }
 
-/* BUTTONS */
+/* buttons */
 
 button{
 border:none;
@@ -65,7 +94,7 @@ padding:12px 24px;
 border-radius:8px;
 cursor:pointer;
 font-size:15px;
-transition:0.25s;
+transition:.25s;
 }
 
 .invite{
@@ -88,7 +117,7 @@ background:#16a34a;
 transform:scale(1.05);
 }
 
-/* HERO */
+/* hero */
 
 .hero{
 text-align:center;
@@ -107,7 +136,7 @@ font-size:18px;
 margin-bottom:30px;
 }
 
-/* FEATURES */
+/* features */
 
 .features{
 display:flex;
@@ -124,7 +153,7 @@ backdrop-filter:blur(10px);
 padding:35px;
 border-radius:14px;
 width:260px;
-transition:0.3s;
+transition:.3s;
 border:1px solid rgba(255,255,255,0.08);
 }
 
@@ -133,7 +162,7 @@ transform:translateY(-8px);
 border-color:#3b82f6;
 }
 
-/* STATS */
+/* stats */
 
 .stats{
 display:flex;
@@ -149,36 +178,48 @@ font-size:40px;
 color:#60a5fa;
 }
 
-.stats p{
-color:#94a3b8;
-}
-
-/* COMMANDS */
+/* commands */
 
 .commands{
 margin-top:120px;
 text-align:center;
 }
 
-.commands h2{
-margin-bottom:40px;
-}
-
 .cmdbox{
 background:#020617;
 padding:18px;
 border-radius:10px;
-width:280px;
+width:260px;
 margin:10px auto;
 border:1px solid rgba(255,255,255,0.05);
-transition:0.2s;
 }
 
-.cmdbox:hover{
-border-color:#3b82f6;
+/* docs */
+
+.docs{
+margin-top:120px;
+text-align:center;
 }
 
-/* STATUS */
+.docs p{
+color:#94a3b8;
+}
+
+/* faq */
+
+.faq{
+margin-top:120px;
+text-align:center;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.faq h3{
+margin-top:20px;
+}
+
+/* status */
 
 .status{
 margin-top:120px;
@@ -190,7 +231,7 @@ color:#22c55e;
 font-weight:600;
 }
 
-/* FOOTER */
+/* footer */
 
 footer{
 margin-top:140px;
@@ -207,11 +248,15 @@ color:#64748b;
 
 <div class="bgseal">🦭</div>
 
+<div class="wave"></div>
+<div class="wave"></div>
+<div class="wave"></div>
+
 <nav>
 
 <div class="logo">Blue Seal</div>
 
-<div class="navbuttons">
+<div class="buttons">
 
 <a href="https://discord.com/oauth2/authorize?client_id=1477618724533043293&permissions=8&integration_type=0&scope=bot+applications.commands">
 <button class="invite">Invite Bot</button>
@@ -230,7 +275,7 @@ color:#64748b;
 <h1>Blue Seal</h1>
 <p>The Ultimate Discord Security Bot</p>
 
-<a href="https://discord.com/oauth2/authorize?client_id=1477618724533043293">
+<a href="https://discord.com/oauth2/authorize?client_id=1477618724533043293&permissions=8&integration_type=0&scope=bot+applications.commands">
 <button class="invite">Add Blue Seal to your Server</button>
 </a>
 
@@ -239,33 +284,33 @@ color:#64748b;
 <section class="features">
 
 <div class="card">
-<h3>Anti-Raid Protection</h3>
+<h3>Anti Raid Protection</h3>
 <p>Automatically detects raids and protects servers instantly.</p>
 </div>
 
 <div class="card">
 <h3>Smart Moderation</h3>
-<p>Advanced moderation commands.</p>
+<p>Ban, kick, mute and manage users easily.</p>
 </div>
 
 <div class="card">
 <h3>Logging System</h3>
-<p>Track every action in your server.</p>
+<p>Track every action happening in your server.</p>
 </div>
 
 <div class="card">
 <h3>Auto Moderation</h3>
-<p>Stop spam, scam links and abuse.</p>
+<p>Stop spam, scam links and abuse automatically.</p>
 </div>
 
 <div class="card">
 <h3>Role Manager</h3>
-<p>Reaction roles and auto roles.</p>
+<p>Reaction roles and automatic role assignment.</p>
 </div>
 
 <div class="card">
 <h3>Security Tools</h3>
-<p>Protect your community 24/7.</p>
+<p>Protect your Discord community 24/7.</p>
 </div>
 
 </section>
@@ -301,6 +346,30 @@ color:#64748b;
 
 </section>
 
+<section class="docs">
+
+<h2>Documentation</h2>
+
+<p>Use /setup to configure Blue Seal in your server.</p>
+<p>More documentation coming soon.</p>
+
+</section>
+
+<section class="faq">
+
+<h2>FAQ</h2>
+
+<h3>How do I add Blue Seal?</h3>
+<p>Click the Invite button and authorize the bot.</p>
+
+<h3>Is Blue Seal free?</h3>
+<p>Yes, the bot is free to use.</p>
+
+<h3>Does it protect against raids?</h3>
+<p>Yes, Blue Seal includes anti-raid protection.</p>
+
+</section>
+
 <section class="status">
 
 <h2>Bot Status</h2>
@@ -316,18 +385,15 @@ color:#64748b;
 
 <script>
 
-/* fake animated stats */
-
 let servers=0
 let users=0
 
 setInterval(()=>{
 servers+=3
-users+=25
+users+=40
 
 document.getElementById("servers").innerText=servers+"+"
 document.getElementById("users").innerText=users+"+"
-
 },120)
 
 </script>
